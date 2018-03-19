@@ -12,15 +12,17 @@
   <main id="app">
     <h4>{{welcomeMessage}}</h4>
 
-    <a :href="targetUrl" :css="{ 'no-decorate' : anchorOff}" target="_blank">go to vue</a>
-
-    <h6 v-if="hasVue">{{ vuemessage }}</h6>
-
     <ul>
-      <li v-for="fruit in deliciousFruit">
-        <p v-on:click="logFruit">{{ fruit.name }} is {{ fruit.flavor }}</p>
+      <li v-for="movie in moviedata">
+        <a :href="movie.vidsource"  v-on:click="logvideo">
+        <img :src="'images/' + movie.thumb" alt=""></a>
       </li>
     </ul>
+
+    <section>
+      <h4>{{moviename}}</h4>
+      <p>{{moviedescription}}</p>
+    </section>
   </main>
   <script src="js/main.js"></script>
 </body>
